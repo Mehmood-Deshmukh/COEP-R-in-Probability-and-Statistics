@@ -47,7 +47,7 @@ colors <- c("blue", "yellow", "green", "black")
 pie(x, label = mylabel, main = "Pie Chart", col = colors)
 
 # Display the explanation box
-legend("bottomright", mylabel, fill = colors
+legend("bottomright", mylabel, fill = colors)
 
 # The legend can be positioned as either:
 
