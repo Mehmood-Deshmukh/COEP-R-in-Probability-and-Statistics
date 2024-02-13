@@ -48,7 +48,7 @@ Data_Cars <- mtcars
 
 summary(Data_Cars)
 
-# The summary() function returns six statistical numbers for each variable:
+# The summary() function returns six statistical numbers for each variable: 
 
 # Min
 # First quantile (percentile)
