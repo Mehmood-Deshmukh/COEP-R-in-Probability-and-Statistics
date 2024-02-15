@@ -1,0 +1,124 @@
+#Name-Mehmood Rehan Deshmukh
+#MIS-612303050
+#Division-8
+
+#Q1.Install packages namely ’plyr’, ’MASS’, ’ggplot2’, ’dplyr’ etc.
+
+#we can use vector to install multiple packages simultaneously
+install.packages(c('plyr', 'MASS', 'ggplot2', 'dplyr'))
+
+#Q2.Find answers to log2(2∧5) and log(exp(1)*exp(1))
+answer1 <- log2(2^5)
+answer2 <- log(exp(1)*exp(1))
+
+#Q3.Using built-in dataset iris, implement the functions like: Summary, class, type of, 
+#head,tail, str, Merge.
+
+#loading dataset
+data(iris)
+
+#summary
+iris_summary <- summary(iris)
+iris_summary
+
+#class
+iris_class <- class(iris)
+iris_class
+
+#typeof
+iris_typeof <- typeof(iris)
+iris_typeof
+
+#head
+iris_head <- head(iris)
+iris_head
+
+#tail
+iris_tail <- tail(iris)
+iris_tail
+
+#str
+iris_str <- str(iris)
+iris_str
+
+#merge
+iris_merge <- merge(iris, iris, by = "Petal.Length")
+iris_merge
+
+#Q4.Write a R program to create a two-dimensional 5×3 array of sequence of even integers 
+#greater than 
+
+answer4 <- array(seq(from = 52, by = 2, length.out = 5*3), dim = c(5, 3))
+answer4
+
+#Q5. Write a R program to create a vector which contains 10 integer values between -50 and 
+#+50
+answer5 <- seq(-50,50, 10)
+answer5
+
+#Q6.Suppose the age is a vector containing ages of 10 persons as 
+#22,27,31,41,30,25,19,20,23,35
+
+age <- c(22, 27, 31, 41, 30, 25, 19, 20, 23, 35)
+
+#a).Access the age of fourth person
+answer6a <- age[4]
+answer6a
+
+#b).Create a vector of 'age 30' with a person >30
+answer6b <- age[age > 30]
+answer6b
+
+#c).Access the age of last 3 person
+answer6c <- tail(age, 3)
+answer6c
+
+#d).Find the number of elements in vector age
+answer6d <- length(age)
+answer6d
+#e).Access the age of person except 5th and 7th
+answer6e <- age[-c(5, 7)]
+answer6e
+#f).Create a vector 'age 2' with a persons between 20 and 25.
+answer6f <- age[(age >= 20) & (age <= 25)]
+answer6f
+
+#Q7.Create a factor from the following vector data:(1,2,3,2,3,1,4,2,3,NA,5,3,2) and also find 
+#levels
+answer7_factors <- factor(c(1, 2, 3, 2, 3, 1, 4, 2, 3, NA, 5, 3, 2))
+answer7 <- levels(factor_data)
+answer7
+
+#Q8.Write a R program to create a list containing strings, numbers, vectors and a logical 
+#values.
+answer8 <- list("abcd", 123, c(1, 2, 3), TRUE)
+answer8
+
+#Q9.Using built-in dataset iris, find out the categorical variables.
+answer9 <- sapply(iris, is.factor)
+answer9
+
+#Q10.Create a numeric vector c(1:5) and a 5 by 3 matrix with elements from 1 to 15.
+answer10_vector <- c(1:5)
+answer10_matrix <- matrix(1:15, nrow = 5, ncol = 3)
+answer10_vector
+answer10_matrix
+
+#Q11. Create a dataframe of the following dataset
+#height:140,137,150,147,139,140,150,132,138,140
+#Weight:55,57,59,62,61,60,60,58,59,57
+
+answer11_dataframe <- data.frame(
+  height = c(140, 137, 150, 147, 139, 140, 150, 132, 138, 140),
+  weight = c(55, 57, 59, 62, 61, 60, 60, 58, 59, 57)
+)
+
+#a).Create a vector h1 with height>145cms
+h1 <- answer11_dataframe$height[answer11_dataframe$height > 145]
+h1
+#b).Create a vector h2 with weight>55kgs
+h2 <- answer11_dataframe$weight[answer11_dataframe$weight > 55]
+h2
+#c).Create a vector h3 with height>140 and weight >60
+h3 <- answer11_dataframe$height[answer11_dataframe$height > 140 & answer11_dataframe$weight > 60]
+h3
