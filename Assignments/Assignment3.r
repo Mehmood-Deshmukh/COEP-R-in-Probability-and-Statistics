@@ -1,3 +1,7 @@
+#Name-Mehmood Rehan Deshmukh
+#MIS-612303050
+#Division-8
+
 #Q1. Find mean, median, mode, maximum, minimum and range of the data set
 #{2.3, 4.4, 5, 5, 6, 6.5, 6.5, 6.5, 6.5, 8.6, 9.2, 4.4, 4.4, 5.4, 5, 2, 4.4}
 data_q1 = c(2.3, 4.4, 5, 5, 6, 6.5, 6.5, 6.5, 6.5, 8.6, 9.2, 4.4, 4.4, 5.4, 5, 2, 4.4)
