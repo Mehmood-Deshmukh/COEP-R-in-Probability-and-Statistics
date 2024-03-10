@@ -13,8 +13,7 @@ boxplot(values ~ group, main = "Boxplot Example", ylab = "Values")
 y=rep(i,f)
 y
 data("mtcars")
-dataset
-  View(mtcars)
+View(mtcars)
 ?mtcars
 # Plot the chart.
 boxplot(mpg ~ cyl, data = mtcars, xlab = "Number of Cylinders",
