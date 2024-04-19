@@ -1,6 +1,7 @@
 ---
 title: "612303050 Deshmukh Mehmood Rehan's Assignment 2"
 output:
+  word_document: default
   html_document: default
 ---
 Q1. Use the moviesData. Create a histogram of the object named imdb_num_votes in this file
