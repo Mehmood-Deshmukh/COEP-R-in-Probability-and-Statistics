@@ -1,0 +1,256 @@
+# Q1. During the economic boom , a researcher believes that the economic recession may have an adverse impact on the average monthly salary of I.T professionals. To verify his belief , a random sample of 12 I.T professionals gave the following average monthly salary.
+# 70000, 78000, 62000, 66000, 61000, 72000, 58000, 64000, 60000, 73000, 74000, 76000
+# Test whether the average monthly salary has gone below Rs 73000
+
+
+#Null Hypothesis: H0: μ >= 73000
+#Alternate Hypothesis: H1: μ < 73000
+#Level of significance: α = 0.05
+#Given data
+salary <- c(70000, 78000, 62000, 66000, 61000, 72000, 58000, 64000, 60000, 73000, 74000, 76000)
+
+p_value_q1 = t.test(salary, mu = 73000, alternative = "less")$p.value
+
+print(p_value_q1)
+
+if(p_value_q1 < 0.05){
+  print("Reject Null Hypothesis")
+}else{
+    print("Fail to reject Null Hypothesis")
+}
+
+# Q2. The time in minutes taken by complete a job by machine I and machine II is given below.
+# Machine I:  20, 16, 26, 27, 23, 22, 25
+# Machine II: 27, 33, 42, 35, 32, 34, 38, 29, 40
+# Can we conclude that the variability in time distribution of population is less than that of population II? Use α=0.05 
+
+
+#Null Hypothesis: H0: σ1 >= σ2
+#Alternate Hypothesis: H1: σ1 < σ2
+#Level of significance: α = 0.05
+#Given data
+
+machine1 <- c(20, 16, 26, 27, 23, 22, 25)
+machine2 <- c(27, 33, 42, 35, 32, 34, 38, 29, 40)
+
+p_value_q2 = var.test(machine1, machine2, alternative='less')$p.value
+
+print(p_value_q2)
+
+
+if(p_value_q2 < 0.05){
+  print("Reject Null Hypothesis")
+}else{
+    print("Fail to reject Null Hypothesis")
+}
+
+# Q3. The heights of 10 female students in a college are found to be 57, 60, 54, 52, 58, 61, 59, 54, 57, 62 inches. 
+# Is it reasonable to believe that average height of female is greater than 52 inches? Use 5% level of significance.
+
+
+#Null Hypothesis: H0: μ <= 52
+#Alternate Hypothesis: H1: μ > 52
+
+#Level of significance: α = 0.05
+#Given data
+height <- c(57, 60, 54, 52, 58, 61, 59, 54, 57, 62)
+
+p_value_q3 = t.test(height, mu = 52, alternative = "greater")$p.value
+
+print(p_value_q3)
+
+if(p_value_q3 < 0.05){
+  print("Reject Null Hypothesis")
+}else{
+    print("Fail to reject Null Hypothesis")
+}
+
+# Q4. A machine part was designed to withstand an average pressure of 120 units.
+# A random sample of size 100 from a large batch was tested and it was found that 
+# the average pressure with these parts can withstand is 105 units with a standard deviation of 20 units.
+# Test whether the batch meets the specification.
+
+#Null Hypothesis: H0: μ = 120
+#Alternate Hypothesis: H1: μ < 120
+
+#Level of significance: α = 0.05
+#Given data
+n <- 100
+xbar <- 105
+mu <- 120
+sd <- 20
+
+z_q4 = (xbar - mu)/(sd/sqrt(n))
+p_value_q4 = pnorm(z_q4, 0, 1)
+
+print(p_value_q4)
+
+if(p_value_q4 < 0.05){
+  print("Reject Null Hypothesis")
+}else{
+    print("Fail to reject Null Hypothesis")
+}
+
+
+# Q5. A random sample of 10 boys had the following Intelligent Quotients (IQ)
+# 70,120,110,101,88,83,95,89,107,125
+# Do these data support the assumption that the population mean IQ is 100?
+
+
+#Null Hypothesis: H0: μ = 100
+#Alternate Hypothesis: H1: μ != 100
+
+#Level of significance: α = 0.05
+
+#Given data
+IQ <- c(70,120,110,101,88,83,95,89,107,125)
+
+p_value_q5 = t.test(IQ, mu = 100)$p.value
+
+print(p_value_q5)
+
+if(p_value_q5 < 0.05){
+  print("Reject Null Hypothesis")
+}else{
+    print("Fail to reject Null Hypothesis")
+}
+
+# Q6. A random sample of 100 recorded deaths in the United States during the past year 
+# showed an average life span of 71.8 years. Assuming a population standard deviation of 8.9 years,
+#  does this seem to indicate that the mean life span today is greater than 70 years? 
+# Use a 0.05 level of significance. (Hint Using Z-test)
+
+
+#Null Hypothesis: H0: μ <= 70
+#Alternate Hypothesis: H1: μ > 70
+
+#Level of significance: α = 0.05
+
+#Given data
+n <- 100
+xbar <- 71.8
+mu <- 70
+sd <- 8.9
+
+z_q6 = (xbar - mu)/(sd/sqrt(n))
+p_value_q6 = pnorm(z_q6, 0, 1 , lower.tail = FALSE)
+
+print(p_value_q6)
+
+if(p_value_q6 < 0.05){
+  print("Reject Null Hypothesis")
+}else{
+    print("Fail to reject Null Hypothesis")
+}
+
+# Q7. A manufacturer of sports equipment has developed a new synthetic fishing line that 
+# the company claims has a mean breaking strength of 8 kilograms with a standard  deviation of 0.5 kilogram.
+# Test the hypothesis that μ = 8 kilograms against the  alternative that μ = 8 kilograms
+# if a random sample of 50 lines is tested and found  to have a mean breaking strength of 7.8 kilograms. Use a 0.01 level of significance.
+
+
+#Null Hypothesis: H0: μ = 8
+#Alternate Hypothesis: H1: μ != 8
+
+#Level of significance: α = 0.01
+
+#Given data
+n <- 50
+xbar <- 7.8
+mu <- 8
+sd <- 0.5
+
+z_q7 = (xbar - mu)/(sd/sqrt(n))
+p_value_q7 = 2*pnorm(z_q7, 0, 1, lower.tail = FALSE)
+
+print(p_value_q7)
+
+if(p_value_q7 < 0.01){
+  print("Reject Null Hypothesis")
+}else{
+    print("Fail to reject Null Hypothesis")
+}
+
+# Q8.The time in minutes taken by two experts to respond the queries is as follows:
+# Expert I: 6,9,4,1,9,9,3,4,10
+# Expert II:5,7,4,1,8,7,4,3,9
+# Test at 5% level of significance whether the variability in time taken by expert I is greater than that of expert II
+
+
+#Null Hypothesis: H0: σ1 <= σ2
+#Alternate Hypothesis: H1: σ1 > σ2
+
+#Level of significance: α = 0.05
+#Given data
+
+expert1 <- c(6,9,4,1,9,9,3,4,10)
+expert2 <- c(5,7,4,1,8,7,4,3,9)
+
+p_value_q8 = var.test(expert1, expert2, alternative='greater')$p.value
+
+print(p_value_q8)
+
+if(var.test(expert1, expert2)$p.value < 0.05){
+  print("Reject Null Hypothesis")
+}else{
+    print("Fail to reject Null Hypothesis")
+}
+
+# Q9.A researcher claims that the average salary of assistant professors is more than $42,000. A sample of 30 assistant professors has a mean salary of $43,260. At ɑ= 0.05, test the claim that assistant professors earn more than $42,000/year (on average). The standard deviation of the population is $5230.
+
+
+#Null Hypothesis: H0: μ <= 42000
+#Alternate Hypothesis: H1: μ > 42000
+
+#Level of significance: α = 0.05
+
+#Given data
+n <- 30
+xbar <- 43260
+mu <- 42000
+sd <- 5230
+
+z_q9 = (xbar - mu)/(sd/sqrt(n))
+p_value_q9 = pnorm(z_q9, 0, 1 , lower.tail = FALSE)
+
+print(p_value_q9)
+
+if(p_value_q9 < 0.05){
+  print("Reject Null Hypothesis")
+}else{
+    print("Fail to reject Null Hypothesis")
+}
+
+# Q10. Using the following data (Take α=0.05)(Hint Using F -test)
+# Sample I: 13, 15, 18, 20, 22, 9, 16
+# Sample II: 21, 18, 20, 16, 9
+# Test the hypothesis Ho:                                 H1: 
+
+
+#Null Hypothesis: H0: σ1 = σ2
+#Alternate Hypothesis: H1: σ1 != σ2
+
+#Level of significance: α = 0.05
+#Given data
+
+sample1 <- c(13, 15, 18, 20, 22, 9, 16)
+sample2 <- c(21, 18, 20, 16, 9)
+
+p_value_q10 = var.test(sample1, sample2)$p.value
+
+print(p_value_q10)
+
+if(p_value_q10 < 0.05){
+  print("Reject Null Hypothesis")
+}else{
+    print("Fail to reject Null Hypothesis")
+}
+
+library(BSDA)
+before = c(4.2, 4.7, 6.6, 7.0, 6.7, 4.5, 5.7, 6.0 ,7.4, 4.9, 6.1, 5.2, 5.7, 6.9, 6.8, 4.9)
+after = c(4.1, 4.9, 6.2, 6.9, 6.8, 4.4, 5.7, 5.8, 6.9, 4.9, 6.0, 4.9, 5.3, 6.5, 7.1, 4.8)
+
+differences <- c(before- after)
+differences
+#install. packages ( "BSDA" )
+SIGN.test(differences, md=0, paired=TRUE , alternative ="greater", conf.level=0.95 )

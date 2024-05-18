@@ -1,0 +1,118 @@
+#Q1).Let X→B(12,0.4)
+#FIND .P(X<=3),  P(X>=8), P(4<=X<=6),P(X=6)
+
+# (a) P(X <= 3)
+p1 <- pbinom(3, 12, 0.4)
+print(p1)
+
+# (b) P(X >= 8)
+p2 <- 1 - pbinom(7, 12, 0.4)
+print(p2)
+
+# (c) P(4 <= X <= 6)
+p3 <- pbinom(6, 12, 0.4) - pbinom(3, 12, 0.4)
+print(p3)
+
+# (d) P(X = 6)
+p4 <- dbinom(6, 12, 0.4)
+print(p4)
+
+
+#Q2). Let X→B(n , p) such that E(X)=4 , V(X)=8/3 find P[X<=4] , P[X>=3] .Also Draw a random sample of size 5 from given binomial distribution.
+
+#np = 4
+#npq = 8/3
+#q = 2/3
+#p = 1/3
+
+#np = 4
+#n = 12
+
+# (a) P(X <= 4)
+p5 <- pbinom(4, 12, 1/3)
+print(p5)
+
+# (b) P(X >= 3)
+p6 <- 1 - pbinom(2, 12, 1/3)
+print(p6)
+
+# Random sample of size 5
+sample <- rbinom(5, 12, 1/3)
+print(sample)
+
+
+#Q3).A machine produces screws of which 1% are defective, find the probability that in a box of 200 screws there are at least 2 defectives. Hint:(Using Poisson distribution).
+# P(at least 2 defectives in a box of 200 screws)
+p7 <- 1 - ppois(1, lambda = 200 * 0.01)
+print(p7)
+
+#Q4).Let X →B(n=8, p=0.3) .Find k such that P[X<=k]=0.2552
+k <- qbinom(0.2552, 8, 0.3)
+print(k)
+
+
+#Q5).Draw a random sample of size 8 from Poisson distribution with mean 2.5.
+sample <- rpois(8, lambda = 2.5)
+print(sample)
+
+#Q6).If the probability that individual suffers from a bad reaction from injection of serum is 0.001,determine the probability that out of 2000 individuals injected 2 or more will suffer from a bad reaction.
+p8 <- 1 - ppois(1, lambda = 2000*0.001)
+print(p8)
+
+#Q7). In a certain industrial facility, accidents occur infrequently. It is known that the probability of an accident on any given day is 0.005 and accidents are independent of each other.
+# (a) Probability of an accident on any given day in a period of 400 days
+p9a <- dpois(1, lambda = 400*0.005)
+print(p9a)
+
+# (b) Probability of at most three days with an accident
+p9b <- ppois(3, lambda = 400*0.005)
+print(p9b)
+
+#Q8). A pair of dice is rolled 420 times. What is the probability that a total of 8 occurs atleast 50 times? Between 70 and 90 times inclusive? Exactly 100 times?
+# Probability of total of 8 occurring at least 50 times
+p10a <- 1 - ppois(49, lambda = 420 * 5/36)
+print(p10a)
+
+# Probability of total between 70 and 90 times inclusive
+p10b <- ppois(90, lambda = 420 * 5/36) - ppois(69, lambda = 420 * 5/36)
+print(p10b)
+
+# Probability of total exactly 100 times
+p10c <- dpois(100, lambda = 420 * 5/36)
+print(p10c)
+
+
+#Q9). The probability that a patient recovers from a rare disease is 0.4. If 100 people are known to have contracted this disease, what is probability that fewer than 30 survive?
+# P(fewer than 30 survive out of 100 with probability of survival 0.4)
+#using normal approximation of binomial
+p11 <- pnorm(29.5, 100*0.4, sqrt(100*0.4*0.6))
+print(p11)
+
+#Q10).Let X→N(µ=20,ϭ=2) Find P[X<=2] ,P[X<4] , P[X>7] and P[X=3]
+# X ~ N(µ=20,ϭ=2)
+# (a) P(X <= 2)
+p12a <- pnorm(2, mean = 20, sd = 2)
+print(p12a)
+
+# (b) P(X < 4)
+p12b <- pnorm(4, mean = 20, sd = 2)
+print(p12b)
+
+# (c) P(X > 7)
+p12c <- 1 - pnorm(7, mean = 20, sd = 2)
+print(p12c)
+
+# (d) P(X = 3) 
+#as the normal distribution is continuous, the probability of X being exactly 3 is  zero
+p12d <- dnorm(3, mean = 20, sd = 2)
+print(p12d)
+#Q11).Let X→Exp(ƛ) with mean =0.1 ,then find P[X<=1] also generate a random sample of size 5.
+# P(X <= 1) for X ~ Exp(λ) with mean = 0.1
+# λ = 1 / mean = 1 / 0.1 = 10
+p13 <- pexp(1, 10)
+print(p13)
+
+# Generate random sample of size 5 from Exp(λ)
+sample <- rexp(5, 10)
+print(sample)
+
