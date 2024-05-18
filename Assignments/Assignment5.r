@@ -19,12 +19,10 @@ if(p_value_q1 < 0.05){
     print("Fail to reject Null Hypothesis")
 }
 
-
-
-Q2. The time in minutes taken by complete a job by machine I and machine II is given below.
-Machine I:  20, 16, 26, 27, 23, 22, 25
-Machine II: 27, 33, 42, 35, 32, 34, 38, 29, 40
-Can we conclude that the variability in time distribution of population is less than that of population II? Use α=0.05 
+# Q2. The time in minutes taken by complete a job by machine I and machine II is given below.
+# Machine I:  20, 16, 26, 27, 23, 22, 25
+# Machine II: 27, 33, 42, 35, 32, 34, 38, 29, 40
+# Can we conclude that the variability in time distribution of population is less than that of population II? Use α=0.05 
 
 
 #Null Hypothesis: H0: σ1 >= σ2
@@ -46,8 +44,8 @@ if(p_value_q2 < 0.05){
     print("Fail to reject Null Hypothesis")
 }
 
-
-Q3. The heights of 10 female students in a college are found to be 57, 60, 54, 52, 58, 61, 59, 54, 57, 62 inches. Is it reasonable to believe that average height of female is greater than 52 inches? Use 5% level of significance.
+# Q3. The heights of 10 female students in a college are found to be 57, 60, 54, 52, 58, 61, 59, 54, 57, 62 inches. 
+# Is it reasonable to believe that average height of female is greater than 52 inches? Use 5% level of significance.
 
 
 #Null Hypothesis: H0: μ <= 52
@@ -67,10 +65,10 @@ if(p_value_q3 < 0.05){
     print("Fail to reject Null Hypothesis")
 }
 
-
-Q4. A machine part was designed to withstand an average pressure of 120 units. A random sample of size 100 from a large batch was tested and it was found that the average pressure with these parts can withstand is 105 units with a standard deviation of 20 units. Test whether the batch meets the specification.
-
-
+# Q4. A machine part was designed to withstand an average pressure of 120 units.
+# A random sample of size 100 from a large batch was tested and it was found that 
+# the average pressure with these parts can withstand is 105 units with a standard deviation of 20 units.
+# Test whether the batch meets the specification.
 
 #Null Hypothesis: H0: μ = 120
 #Alternate Hypothesis: H1: μ < 120
@@ -94,9 +92,9 @@ if(p_value_q4 < 0.05){
 }
 
 
-Q5. A random sample of 10 boys had the following Intelligent Quotients (IQ)
-70,120,110,101,88,83,95,89,107,125
-Do these data support the assumption that the population mean IQ is 100?
+# Q5. A random sample of 10 boys had the following Intelligent Quotients (IQ)
+# 70,120,110,101,88,83,95,89,107,125
+# Do these data support the assumption that the population mean IQ is 100?
 
 
 #Null Hypothesis: H0: μ = 100
@@ -117,8 +115,10 @@ if(p_value_q5 < 0.05){
     print("Fail to reject Null Hypothesis")
 }
 
-
-Q6. A random sample of 100 recorded deaths in the United States during the past year showed an average life span of 71.8 years. Assuming a population standard deviation of 8.9 years, does this seem to indicate that the mean life span today is greater than 70 years? Use a 0.05 level of significance. (Hint Using Z-test)
+# Q6. A random sample of 100 recorded deaths in the United States during the past year 
+# showed an average life span of 71.8 years. Assuming a population standard deviation of 8.9 years,
+#  does this seem to indicate that the mean life span today is greater than 70 years? 
+# Use a 0.05 level of significance. (Hint Using Z-test)
 
 
 #Null Hypothesis: H0: μ <= 70
@@ -143,8 +143,10 @@ if(p_value_q6 < 0.05){
     print("Fail to reject Null Hypothesis")
 }
 
-
-Q7. A manufacturer of sports equipment has developed a new synthetic fishing line that  the company claims has a mean breaking strength of 8 kilograms with a standard  deviation of 0.5 kilogram. Test the hypothesis that μ = 8 kilograms against the  alternative that μ = 8 kilograms if a random sample of 50 lines is tested and found  to have a mean breaking strength of 7.8 kilograms. Use a 0.01 level of significance.
+# Q7. A manufacturer of sports equipment has developed a new synthetic fishing line that 
+# the company claims has a mean breaking strength of 8 kilograms with a standard  deviation of 0.5 kilogram.
+# Test the hypothesis that μ = 8 kilograms against the  alternative that μ = 8 kilograms
+# if a random sample of 50 lines is tested and found  to have a mean breaking strength of 7.8 kilograms. Use a 0.01 level of significance.
 
 
 #Null Hypothesis: H0: μ = 8
@@ -169,11 +171,10 @@ if(p_value_q7 < 0.01){
     print("Fail to reject Null Hypothesis")
 }
 
-
-Q8.The time in minutes taken by two experts to respond the queries is as follows:
-Expert I: 6,9,4,1,9,9,3,4,10
-Expert II:5,7,4,1,8,7,4,3,9
-Test at 5% level of significance whether the variability in time taken by expert I is greater than that of expert II
+# Q8.The time in minutes taken by two experts to respond the queries is as follows:
+# Expert I: 6,9,4,1,9,9,3,4,10
+# Expert II:5,7,4,1,8,7,4,3,9
+# Test at 5% level of significance whether the variability in time taken by expert I is greater than that of expert II
 
 
 #Null Hypothesis: H0: σ1 <= σ2
@@ -195,8 +196,7 @@ if(var.test(expert1, expert2)$p.value < 0.05){
     print("Fail to reject Null Hypothesis")
 }
 
-
-Q9.A researcher claims that the average salary of assistant professors is more than $42,000. A sample of 30 assistant professors has a mean salary of $43,260. At ɑ= 0.05, test the claim that assistant professors earn more than $42,000/year (on average). The standard deviation of the population is $5230.
+# Q9.A researcher claims that the average salary of assistant professors is more than $42,000. A sample of 30 assistant professors has a mean salary of $43,260. At ɑ= 0.05, test the claim that assistant professors earn more than $42,000/year (on average). The standard deviation of the population is $5230.
 
 
 #Null Hypothesis: H0: μ <= 42000
@@ -221,10 +221,10 @@ if(p_value_q9 < 0.05){
     print("Fail to reject Null Hypothesis")
 }
 
-Q10. Using the following data (Take α=0.05)(Hint Using F -test)
-Sample I: 13, 15, 18, 20, 22, 9, 16
-Sample II: 21, 18, 20, 16, 9
-Test the hypothesis Ho:                                 H1: 
+# Q10. Using the following data (Take α=0.05)(Hint Using F -test)
+# Sample I: 13, 15, 18, 20, 22, 9, 16
+# Sample II: 21, 18, 20, 16, 9
+# Test the hypothesis Ho:                                 H1: 
 
 
 #Null Hypothesis: H0: σ1 = σ2
@@ -246,7 +246,6 @@ if(p_value_q10 < 0.05){
     print("Fail to reject Null Hypothesis")
 }
 
-
 library(BSDA)
 before = c(4.2, 4.7, 6.6, 7.0, 6.7, 4.5, 5.7, 6.0 ,7.4, 4.9, 6.1, 5.2, 5.7, 6.9, 6.8, 4.9)
 after = c(4.1, 4.9, 6.2, 6.9, 6.8, 4.4, 5.7, 5.8, 6.9, 4.9, 6.0, 4.9, 5.3, 6.5, 7.1, 4.8)
@@ -255,4 +254,3 @@ differences <- c(before- after)
 differences
 #install. packages ( "BSDA" )
 SIGN.test(differences, md=0, paired=TRUE , alternative ="greater", conf.level=0.95 )
-
